@@ -12,7 +12,7 @@ namespace Exam
         public int NumberOfQuestion { get; set; }
         public Question[] QuestionArr { get; set; }
 
-        public abstract void CreateExam();
+        public abstract void CreateExamQuestions();
         public abstract void ShowExam();
     }
 }

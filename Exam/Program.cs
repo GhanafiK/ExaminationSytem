@@ -28,7 +28,7 @@ namespace Exam
 
                 sw.Stop();
 
-                Console.WriteLine($"Time = {sw.Elapsed}");
+                Console.WriteLine($"The Elapsed Time = {sw.Elapsed}");
             }
 
         }

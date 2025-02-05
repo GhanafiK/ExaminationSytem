@@ -15,7 +15,7 @@ namespace Exam
         }
 
 
-        public override void CreateExam()
+        public override void CreateExamQuestions()
         {
             QuestionArr=new Question[NumberOfQuestion];
             for(int i=0;i<QuestionArr.Length;i++)

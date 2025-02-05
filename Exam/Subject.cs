@@ -50,7 +50,7 @@ namespace Exam
                 Exam = new FinalExam(ExamTime, NumberOfQuestion);
 
             Console.Clear();
-            Exam.CreateExam();
+            Exam.CreateExamQuestions();
 
         }
 
