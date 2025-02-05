@@ -30,7 +30,7 @@ namespace Exam
         {  
             if (QuestionArr?.Length > 0)
             {
-
+                int[] userAns = new int[QuestionArr.Length];
                 for (int i = 0; i < QuestionArr.Length; i++)
                 {
                     Console.WriteLine($"{QuestionArr[i].Header}");
@@ -38,7 +38,7 @@ namespace Exam
 
                     for(int j = 0; j < QuestionArr[i].AnswersList.Length; j++)
                     {
-                        Console.Write($"{j+1}-{QuestionArr[i].AnswersList[j]}         ");
+                        Console.Write($"{j+1}- {QuestionArr[i].AnswersList[j]}         ");
                     }
                     Console.WriteLine("\n-----------------------------------------------");
 
@@ -48,15 +48,16 @@ namespace Exam
                     {
                         validAns=int.TryParse(Console.ReadLine(),out  ansId);
                     }while( !validAns || !(ansId is 1 or 2 or 3) );
-
+                    userAns[i] = ansId - 1;
                 }
 
                 Console.Clear();
-                Console.WriteLine("Right Answers");
+                Console.WriteLine("Your Exam Demo Answers:\n");
 
                 for (int i=0;i<QuestionArr.Length;i++)
                 {
-                    Console.WriteLine($"Q{i+1})  {QuestionArr[i].Body} : {QuestionArr[i].correctAnswer}");
+                    Console.WriteLine($"Q{i + 1})  {QuestionArr[i].Body}");
+                    Console.WriteLine($"Your Answer: {QuestionArr[i].AnswersList[userAns[i]]} , Correct Answer: {QuestionArr[i].correctAnswer}\n");
                 }
             }
         }

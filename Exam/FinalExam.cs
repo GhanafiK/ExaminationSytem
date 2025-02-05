@@ -55,7 +55,7 @@ namespace Exam
 
                     for (int j = 0; j < QuestionArr[i].AnswersList.Length; j++)
                     {
-                        Console.Write($"{j + 1}-{QuestionArr[i].AnswersList[j]}         ");
+                        Console.Write($"{j + 1}- {QuestionArr[i].AnswersList[j]}         ");
                     }
 
                     Console.WriteLine("\n-----------------------------------------------");
@@ -74,11 +74,19 @@ namespace Exam
                 }
 
                 Console.Clear();
-                Console.WriteLine("Your Answer:");
+                Console.WriteLine("Your Exam Demo Answers:\n");
 
                 for (int i = 0; i < QuestionArr.Length; i++)
                 {
-                    Console.WriteLine($"Q{i + 1})  {QuestionArr[i].Body} : {QuestionArr[i].AnswersList[userAns[i]]}");
+                    Console.WriteLine($"Q{i + 1})  {QuestionArr[i].Body}");
+                    if(QuestionArr[i].AnswersList[userAns[i]].AnsId==QuestionArr[i].correctAnswer.AnsId)
+                    {
+                        Console.WriteLine($"Your Answer: {QuestionArr[i].AnswersList[userAns[i]]} is correct\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Your Answer: {QuestionArr[i].AnswersList[userAns[i]]} , Correct Answer: {QuestionArr[i].correctAnswer}\n");
+                    }
                 }
 
                 Console.WriteLine($"\nYour Exam Grade is {grade} From {AllQuestionsGrade}");
